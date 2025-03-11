@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mb-4">
-        <h1 class="sticky top-0 mb-2 text-2xl">{{ $book->title }}</h1>
+        <h1 class="mb-2 text-2xl">{{ $book->title }}</h1>
 
         <div class="book-info">
             <div class="book-author mb-4 text-lg font-semibold">by {{ $book->author }}</div>
@@ -18,17 +18,17 @@
     </div>
 
     <div>
-        <h2 class="mb-4 text-xl font-semibold">Reviews</h2>
+        <h2 class="mb-4 text-xl font-semibold">Reviews :</h2>
         <ul>
             @forelse ($book->reviews as $review)
                 <li class="book-item mb-4">
                     <div>
                         <div class="mb-2 flex items-center justify-between">
-                            <div class="font-semibold">{{ $review->rating }}</div>
+                            <div class="font-semibold">Rating : {{ $review->Rating }}</div>
                             <div class="book-review-count">
                                 {{ $review->created_at->format('M j, Y') }}</div>
                         </div>
-                        <p class="text-gray-700">{{ $review->review }}</p>
+                        <p class="text-gray-700">{{ $review->Review }}</p>
                     </div>
                 </li>
             @empty
